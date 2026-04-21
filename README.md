@@ -3,7 +3,7 @@
 ## 📋 Deskripsi
 Project Laravel 1
 
-## 🚀 Demo
+## 🚀 Kicau Kicau Mania
 ![kicau-kicau-mania](public/assets/cat-scuba.gif)
 
 ## ⚙️ Instalasi
