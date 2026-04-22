@@ -1,5 +1,3 @@
-# Nama Project Laravel Kamu
-
 ## 📋 Deskripsi
 Project Laravel 1
 

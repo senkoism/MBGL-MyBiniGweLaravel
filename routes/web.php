@@ -14,12 +14,12 @@ Route::get('/alamat', function() {
 });
 
 //route dinamis dengan parameter id
-Route::get('/user/{id}', function() {
+Route::get('/user/{id}', function($id) {
     echo "User id:" . $id;
 });
 
 //route dinamis dengan parameter nama
-Route::get('/user1/{nama}', function() {
+Route::get('/user1/{nama}', function($nama) {
     echo "User name:" . $nama;
 });
 
@@ -29,7 +29,7 @@ Route::get('/user2/{nama?}', function($name = 'tamu') {
 });
 
 //route dinamis dengan parameter nama dan id
-Route::get('/user3/{nama}', function($id, $name) {
+Route::get('/user3/{nama},{id}', function($id, $name) {
     echo "User ID:" . $id;
     echo "<br>";
     echo "User name:" .$name;
@@ -61,4 +61,14 @@ Route::delete('/hapus/{id}', function($id){
 Route::get('/test-method', function(){
     return view('test_method');
 });
- 
+
+//gek aku cek lagi
+Route::get('/detailproduk/{name}', function($name){
+    return view('produk.detail',
+        ['product_name' => $name,
+        'id'=> 101,
+        'color' => 'silver',
+        'stock' => 12
+        ]
+    );
+});
