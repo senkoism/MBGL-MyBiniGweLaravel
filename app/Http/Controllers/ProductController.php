@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+//gunakan ini jika tidak ada intellisence 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -18,6 +20,9 @@ class ProductController extends Controller
             ['id' => 3, 'name' => 'Keyboard', 'price' => 300000],
             ['id' => 4, 'name' => 'Monitor', 'price' => 2500000],
         ];
+        $products = Product::all(); //eloquent
+        // $products = DB::select('products');//cara second 
+        // $products = DB::table('products')->get();//cara third
 
         return view('produk.index', compact('title', 'products'));
         //return view('produk.index', [
