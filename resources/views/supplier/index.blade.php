@@ -35,13 +35,18 @@
                 @foreach ($suppliers as $index => $supplier)
                     <tr>
                         <td>{{ $index + 1 }}</td>
-                        <td>{{ $supplier['name'] }}</td>
-                        <td>{{ $supplier['phone'] }}</td>
-                        <td>{{ $supplier['address'] }}</td>
+                        <td>{{ $supplier->name }}</td>
+                        <td>{{ $supplier->phone }}</td>
+                        <td>{{ $supplier->address }}</td>
                         <td>
-                            <a href="{{ url('/supplier/' . $supplier['id']) }}" class="btn btn-sm btn-info">Detail</a>
-                            <a href="{{ url('/supplier/' . $supplier['id'] . '/edit') }}"
+                            <a href="{{ url('/supplier/' . $supplier->id) }}" class="btn btn-sm btn-info">Detail</a>
+                            <a href="{{ url('/supplier/' . $supplier->id . '/edit') }}"
                                 class="btn btn-sm btn-primary">Edit</a>
+                            <form action="{{ url('/supplier/' . $supplier->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
